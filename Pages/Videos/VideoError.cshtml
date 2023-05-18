@@ -1,0 +1,13 @@
+﻿@page "{message}"
+@model ASP_Test.Pages.Videos.VideoErrorModel
+@{
+    ViewData["Title"] = "VideoError";
+}
+
+<h1>Ошибка!</h1>
+
+<div>@Model.Message</div>
+
+<a asp-page="./List" class="btn alert-info">Назад к существующим видео!</a>
+
+<p>Расхакерились тут!</p>

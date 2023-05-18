@@ -1,0 +1,40 @@
+﻿@page "{videoID:int}"
+@model ASP_Test.Pages.Videos.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>@Model.Video.Title</h1>
+
+@if (Model.CommitMessage != null)
+{
+    TempData.Keep("CommitMessage");
+    <div class="alert alert-info">@Model.CommitMessage</div>
+}
+
+<div>
+    ID: @Model.Video.Id
+</div>
+<div>
+    Название: @Model.Video.Title
+</div>
+<div>
+    Дата релиза: @Model.Video.ReleaseDate.ToString("dd MMMM yyyy")
+</div>
+<div>
+    Жанр: @Model.Video.Genre
+</div>
+<div>
+    Цена: @Model.Video.Price
+</div>
+<div>
+    Lent Out (хз чё это): @Html.CheckBoxFor(x => x.Video.LentOut)
+</div>
+@if (Model.Video.LentOut)
+{
+    <div>
+        Одолжили?: @Model.Video.LentTo
+    </div>
+}
+
+<a asp-page="./List" class="btn btn-outline-primary">Назад к списку</a>
