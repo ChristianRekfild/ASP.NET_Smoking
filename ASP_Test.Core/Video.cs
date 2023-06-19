@@ -22,6 +22,10 @@ namespace ASP_Test.Core
         [DisplayName("LentTo, тоже хрень какая-то заморская")]
         public string? LentTo { get; set; }
 
+        public int Rating { get; set; }
+        public string Review { get; set; }
+        public string OnlineURL { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var property = new[] { nameof(LentTo) };

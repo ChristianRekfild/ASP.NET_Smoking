@@ -1,6 +1,7 @@
 ﻿@page
 @model ASP_Test.Pages.Videos.ListModel
 @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>@Model.PageTitle</h1>
@@ -67,3 +68,12 @@
 
     </div>
 </div>
+
+@section Notification {
+    <div class="row">
+        <div class="col-md-12 alert alert-info" style="text-align:center">
+            This is a notification
+        </div>
+    </div>
+}
+

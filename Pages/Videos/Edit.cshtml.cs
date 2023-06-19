@@ -36,7 +36,7 @@ namespace ASP_Test.Pages.Videos
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+             if (ModelState.IsValid)
             {
                 _ = Video.Id > 0 ? _videoData.UpdateVideo(Video)
                     : _videoData.AddVideo(Video);

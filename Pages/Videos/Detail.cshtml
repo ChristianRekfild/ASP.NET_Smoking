@@ -2,6 +2,7 @@
 @model ASP_Test.Pages.Videos.DetailModel
 @{
     ViewData["Title"] = "Detail";
+    Layout = "_LayoutSpecial";
 }
 
 <h1>@Model.Video.Title</h1>
@@ -24,9 +25,14 @@
 <div>
     Жанр: @Model.Video.Genre
 </div>
-<div>
+
+@*<div>
     Цена: @Model.Video.Price
-</div>
+</div>*@
+<videoPrice video-price="@Model.Video.Price" culture-name="ru-ru" label="Цена: "></videoPrice>
+
+<rating rating="@Model.Video.Rating" label="Оценка: "></rating>
+
 <div>
     Lent Out (хз чё это): @Html.CheckBoxFor(x => x.Video.LentOut)
 </div>
